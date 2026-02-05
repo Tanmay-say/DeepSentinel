@@ -1,0 +1,104 @@
+// Prisma Schema for DeepSentinel
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String   @id @default(uuid())
+  walletAddress String   @unique
+  email         String?
+  settings      Json     @default("{}")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@map("users")
+}
+
+model Agent {
+  id            String   @id @default(uuid())
+  name          String
+  type          String   // 'arbitrage_hunter' | 'market_maker' | 'mev_guardian' | 'yield_optimizer'
+  status        String   @default("idle") // 'active' | 'idle' | 'error' | 'paused'
+  config        Json     @default("{}")
+  statistics    Json     @default("{}")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  trades        Trade[]
+  activities    ActivityLog[]
+  opportunities Opportunity[]
+
+  @@map("agents")
+}
+
+model Trade {
+  id            String   @id @default(uuid())
+  agentId       String
+  agent         Agent    @relation(fields: [agentId], references: [id], onDelete: Cascade)
+
+  type          String   // 'arbitrage' | 'market_making' | 'mev_protection'
+  poolA         String   // Pool identifier
+  poolB         String?  // Second pool for arbitrage
+  spread        Float?
+  profitAmount  Float
+  profitToken   String   @default("SUI")
+  gasUsed       Float    @default(0.001)
+  txHash        String?
+
+  status        String   // 'pending' | 'success' | 'failed'
+  errorMessage  String?
+
+  aiDecision    Json?    // Gemini reasoning
+
+  executedAt    DateTime @default(now())
+
+  @@map("trades")
+  @@index([agentId])
+  @@index([status])
+  @@index([executedAt])
+}
+
+model Opportunity {
+  id            String   @id @default(uuid())
+  agentId       String
+  agent         Agent    @relation(fields: [agentId], references: [id], onDelete: Cascade)
+
+  type          String   // 'arbitrage' | 'market_making'
+  poolA         String
+  poolB         String?
+  spread        Float
+  estimatedProfit Float
+  status        String   @default("analyzing") // 'analyzing' | 'executed' | 'expired' | 'rejected'
+
+  detectedAt    DateTime @default(now())
+  expiresAt     DateTime?
+
+  @@map("opportunities")
+  @@index([agentId])
+  @@index([status])
+  @@index([detectedAt])
+}
+
+model ActivityLog {
+  id        String   @id @default(uuid())
+  agentId   String?
+  agent     Agent?   @relation(fields: [agentId], references: [id], onDelete: Cascade)
+
+  eventType String   // 'opportunity_detected' | 'trade_executed' | 'agent_started' | 'agent_stopped'
+  message   String
+  metadata  Json     @default("{}")
+  level     String   @default("info") // 'info' | 'warning' | 'error' | 'success'
+
+  createdAt DateTime @default(now())
+
+  @@map("activity_logs")
+  @@index([agentId])
+  @@index([eventType])
+  @@index([createdAt])
+}
