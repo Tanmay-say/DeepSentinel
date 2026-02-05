@@ -1,0 +1,144 @@
+{
+  "identity": {
+    "name": "E1",
+    "persona": "The Anti-AI Designer",
+    "principles": [
+      "Fusion over Imitation",
+      "Emotion First",
+      "Content is King",
+      "Zoom in",
+      "Negative Space",
+      "Contrast"
+    ],
+    "anti_patterns": [
+      "Purple/Teal CTA dominance",
+      "Inter font everywhere",
+      "Center-everything layout",
+      "Gradient overload (>20%)",
+      "Default Shadcn look"
+    ]
+  },
+  "project_context": {
+    "name": "DeepSentinel",
+    "description": "Autonomous AI agent platform for DeFi arbitrage on Sui blockchain.",
+    "app_type": "Hybrid (Marketing + Dashboard)",
+    "theme_strategy": "Dark Mode First (The Performance Pro)",
+    "emotional_tone": "Precision, Stealth, Authority, Wealth",
+    "target_audience": "DeFi traders, Crypto enthusiasts, Tech-savvy investors"
+  },
+  "typography": {
+    "font_family": {
+      "headings": "Chivo, sans-serif",
+      "body": "Manrope, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "installation_guide": "Import from Google Fonts: https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700;900&family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@300;400;500;600;700&display=swap",
+    "usage_rules": {
+      "headings": "Use Chivo for all H1-H3. Tight tracking (-0.02em). Bold or Black weights.",
+      "body": "Use Manrope for UI text. Relaxed line-height (1.6).",
+      "code": "Use JetBrains Mono for all financial data, logs, hash addresses, and 'Agent Status' terminal views.",
+      "uppercase": "Use Uppercase + Wide Spacing for labels (e.g., 'TOTAL PROFIT', 'ACTIVE AGENTS')."
+    }
+  },
+  "colors": {
+    "palette_name": "Deep Ocean Sentinel",
+    "backgrounds": {
+      "page": "#050505",
+      "card": "rgba(10, 10, 10, 0.6)",
+      "sidebar": "#080808",
+      "glass": "rgba(5, 5, 5, 0.7)"
+    },
+    "accents": {
+      "primary": "#3B82F6",
+      "secondary": "#06B6D4",
+      "success": "#10B981",
+      "warning": "#EAB308",
+      "error": "#EF4444",
+      "sui_brand": "#4DA2FF"
+    },
+    "text": {
+      "primary": "#F9FAFB",
+      "secondary": "#9CA3AF",
+      "muted": "#4B5563"
+    },
+    "borders": {
+      "subtle": "rgba(255, 255, 255, 0.08)",
+      "highlight": "rgba(59, 130, 246, 0.5)"
+    },
+    "gradients": {
+      "hero_glow": "radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15) 0%, transparent 50%)",
+      "card_hover": "linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%)"
+    }
+  },
+  "layout_strategy": {
+    "marketing": {
+      "grid_type": "The Tetris Grid (Asymmetric)",
+      "container_width": "max-w-7xl",
+      "spacing_scale": "Luxurious (p-8 to p-32)",
+      "hero_style": "Full height, centered text but asymmetric background elements."
+    },
+    "dashboard": {
+      "grid_type": "The Bento Grid (High Density)",
+      "structure": "Sidebar Navigation + Main Content Area",
+      "card_style": "Cardless look or subtle glass cards. 1px borders. No shadows.",
+      "gap": "gap-4 or gap-6"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "Sharp edges or minimal rounded-md. High contrast. Hover: Glow effect.",
+      "secondary": "Outline with glass background. Hover: fill-white/10.",
+      "connect_wallet": "Special status. Use 'Sui Brand' color or Gradient Border."
+    },
+    "cards": {
+      "style": "Glassmorphism. backdrop-blur-xl. Border: 1px solid white/10.",
+      "hover": "Scale 1.01. Border lightens to white/20."
+    },
+    "charts": {
+      "library": "Recharts (via Shadcn)",
+      "style": "Minimal axes. Gradients for area fills. Neon strokes."
+    },
+    "activity_feed": {
+      "style": "Terminal/Console aesthetic. Monospace font. Green/Red text for trade execution logs."
+    }
+  },
+  "visual_enhancers": {
+    "glassmorphism": {
+      "classes": "backdrop-blur-xl bg-black/40 border border-white/10 shadow-2xl"
+    },
+    "textures": {
+      "noise": "Overlay a subtle noise texture on the background (opacity 0.03) to reduce banding."
+    },
+    "effects": {
+      "glow": "Use drop-shadow for text and box-shadow for active states.",
+      "scanlines": "Optional: very subtle scanline overlay for the 'Live Activity' section."
+    }
+  },
+  "motion": {
+    "library": "framer-motion",
+    "scroll": "lenis (smooth scrolling for landing page)",
+    "rules": [
+      "Staggered entrance for all list items.",
+      "Micro-interactions on hover (scale, brightness).",
+      "Smooth layout transitions (layout prop).",
+      "No 'transition: all'."
+    ]
+  },
+  "image_urls": {
+    "hero_background": "https://images.unsplash.com/photo-1664526936810-ec0856d31b92?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAxODF8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGRhcmslMjBibHVlJTIwY3liZXIlMjBuZXR3b3JrJTIwbm9kZXN8ZW58MHx8fHwxNzcwMjg1NzYyfDA&ixlib=rb-4.1.0&q=85",
+    "feature_network": "https://images.unsplash.com/photo-1664526937033-fe2c11f1be25?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAxODF8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMGRhcmslMjBibHVlJTIwY3liZXIlMjBuZXR3b3JrJTIwbm9kZXN8ZW58MHx8fHwxNzcwMjg1NzYyfDA&ixlib=rb-4.1.0&q=85",
+    "abstract_purple": "https://images.unsplash.com/photo-1647356191320-d7a1f80ca777?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAxODF8MHwxfHNlYXJjaHw0fHxhYnN0cmFjdCUyMGRhcmslMjBibHVlJTIwY3liZXIlMjBuZXR3b3JrJTIwbm9kZXN8ZW58MHx8fHwxNzcwMjg1NzYyfDA&ixlib=rb-4.1.0&q=85"
+  },
+  "universal_guidelines": [
+    "You tend to converge toward generic, 'on distribution' outputs. Avoid this.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur).",
+    "You MUST NOT apply universal transition. Eg: 'transition: all'.",
+    "You MUST NOT center align the app container.",
+    "Always use modern button styles (pill or sharp).",
+    "NEVER use AI assistant Emoji characters.",
+    "Missing categories (especially sponsor logos) = main agent will use placeholder text which is FORBIDDEN."
+  ],
+  "instructions_to_main_agent": "Read this JSON. Install the fonts. Configure Tailwind with the 'Deep Ocean' palette. Build the Landing Page with the Tetris Grid and the Dashboard with the Bento Grid. Use the provided image URLs. Ensure all interactive elements have data-testid."
+}
